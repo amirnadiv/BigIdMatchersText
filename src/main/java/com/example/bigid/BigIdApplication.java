@@ -1,13 +1,13 @@
-package com.example.nice3;
+package com.example.bigid;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Nice3Application {
+public class BigIdApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Nice3Application.class, args);
+        SpringApplication.run(BigIdApplication.class, args);
     }
 
 }

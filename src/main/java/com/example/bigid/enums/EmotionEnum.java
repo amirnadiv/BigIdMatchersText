@@ -1,4 +1,4 @@
-package com.example.nice3.enums;
+package com.example.bigid.enums;
 
 public enum EmotionEnum {
 
