@@ -1,7 +1,9 @@
 package com.example.bigid;
 
 import com.example.bigid.model.MyCounter;
+import com.example.bigid.readers.NiceFileReader;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ComponentScan;
 
@@ -17,9 +19,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BigIdApplicationTests {
 
 
+    @Autowired
+    NiceFileReader niceFileReader;
 
     @Test
-    void writeInteractionResultsToFile() throws Exception {
+    void testMain() throws Exception {
 
 
 
@@ -35,6 +39,15 @@ class BigIdApplicationTests {
         }
         latch.await();
         assertEquals(numberOfThreads, counter.getCount());
+
+
+    }
+
+
+    @Test
+    void testMain2() throws Exception {
+
+        niceFileReader.readAll();
 
 
     }
