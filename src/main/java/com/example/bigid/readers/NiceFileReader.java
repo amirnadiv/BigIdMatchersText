@@ -22,26 +22,20 @@ import org.springframework.stereotype.Component;
 @Component
 public class NiceFileReader implements Reader {
 
-    @Value("inputFilePath")
+    @Value("${inputFilePath}")
     String inputFilePath;
 
 
-    public void readAll() throws IOException, URISyntaxException {
-
-//
-//        final AtomicInteger c = new AtomicInteger();
-//        Files.lines(new File(new URI("http://norvig.com/big.txt")).toPath())
-//                .collect(Collectors.groupingBy(e -> c.getAndIncrement()))
-//                .forEach((integer, strings) -> System.out.println(strings.stream().findFirst()));
-
-
-
-        LineIterator it = FileUtils.lineIterator(new File(new URI("http://norvig.com/big.txt")), "UTF-8");
+    public void searchStringInFile(String searchString) throws IOException {
+        int lineCounter=0;
+        LineIterator it = FileUtils.lineIterator(new File(inputFilePath));
         try {
             while (it.hasNext()) {
+                lineCounter++;
                 String line = it.nextLine();
-                //if (line.contains(stringToCheck))
-                System.out.println(line);
+                int indexOfSearchString = line.indexOf(searchString);
+                if (indexOfSearchString >=0)
+                {System.out.println(searchString+lineCounter+ indexOfSearchString);}
             }
         } finally {
             LineIterator.closeQuietly(it);

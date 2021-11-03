@@ -47,7 +47,7 @@ class BigIdApplicationTests {
     @Test
     void testMain2() throws Exception {
 
-        niceFileReader.readAll();
+        niceFileReader.searchStringInFile("Timothy");
 
 
     }

@@ -6,5 +6,5 @@ import java.net.URISyntaxException;
 
 public interface Reader {
 
-    void readAll() throws IOException, URISyntaxException;
+    void searchStringInFile(String searchString) throws IOException, URISyntaxException;
 }
